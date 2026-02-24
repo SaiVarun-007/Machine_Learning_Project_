@@ -2,9 +2,9 @@ import joblib
 import pandas as pd
 
 model_young = joblib.load("artifacts/model_young.joblib")
-model_rest = joblib.load("artifacts/model_rest.joblib")
+model_rest = joblib.load("artifacts/model_Rest.joblib")
 scaler_young = joblib.load("artifacts/scaler_young.joblib")
-scaler_rest = joblib.load("artifacts/scaler_rest.joblib")
+scaler_rest = joblib.load("artifacts/scaler_Rest.joblib")
 
 
 def preprocess_input(input_dict):
@@ -76,5 +76,6 @@ def predict(input_dict):
         final_premium = model_young.predict(processed_data)
     else:
         final_premium = model_rest.predict(processed_data)
+
 
     return final_premium
